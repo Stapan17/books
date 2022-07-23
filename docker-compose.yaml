@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-    database:
+    db:
         image: postgres
 
         environment:
@@ -28,7 +28,7 @@ services:
             - .:/code
 
         depends_on:
-            - database
+            - db
 
 volumes:
     dbdata:
