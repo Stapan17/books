@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-n$^6+uy#%!15++vfy#q*#0a61d^^a9(zrjq(r_1i4ntx$-q%bd
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://books-docker.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://books-docker.herokuapp.com', 'https://docker-books-container.herokuapp.com']
 
 # Application definition
 
@@ -82,14 +82,14 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 DATABASES = {
     'default': {
-       'ENGINE': 'django.db.backends.sqlite3',
-       'NAME': BASE_DIR / 'db.sqlite3',
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'postgres',
-        # 'USER': 'postgres',
-        # 'PASSWORD': 'postgres',
-        # 'HOST': 'database',
-        # 'PORT': '5432',
+    #    'ENGINE': 'django.db.backends.sqlite3',
+    #    'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'database',
+        'PORT': '5432',
     }
 }
 
