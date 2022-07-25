@@ -1,24 +1,30 @@
-<!DOCTYPE html>
+<!DOCTYPE html> {% load static %}
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Update Book Details</title>
 </head>
 
 <body>
+    <center style="margin-top: 100px;">
 
-    <form action="" enctype="multipart/form-data" method="POST">
+        <h1>Update Book Details</h1>
 
-        {% csrf_token %} {{books_form.as_p}}
+        <form action="" enctype="multipart/form-data" method="POST" style="margin-top: 70px;">
 
-        <button type="submit">Add book</button>
+            {% csrf_token %} {{books_form.as_p}}
 
-    </form>
+            <button type="submit" style="margin-top: 20px;">Update book</button>
+
+        </form>
+
+    </center>
 
 
 </body>
 
-</html>
+</html

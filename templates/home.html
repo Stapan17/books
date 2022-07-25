@@ -6,16 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <title>GOD</title>
+    <title>Book Lists</title>
 </head>
 
 <body>
-    <h1>Great - Awesome!!!</h1>
 
-    <a href="{% url 'add-book' %}">add-book</a> <br>
+    <center>
+        <h1>Book Lists</h1>
 
-    </a> <br> {% for book in books %} {{book.title}} <br> {{book.author}} <br>
-    <a href="{% url 'update-book' book.pk %}">Update Book</a> br <a href="{% url 'delete-book' book.pk %}">Delete Book</a> <br> {% endfor %}
+        <div style="margin: 30px;"><a href="{% url 'add-book' %}">add-book</a> </div> <br>
+
+        </a>
+
+        {% if books %}
+
+        <div style="margin: 10px;">
+
+            <table style="width: 90%;">
+                <tr>
+                    <td width="20px">Sr. No</td>
+                    <td width="100px">Title</td>
+                    <td width="100px">Author</td>
+                    <td width="20px">Update Book</td>
+                    <td width="20px">Delete Book</td>
+                </tr>
+                {% for book in books %}
+                <tr>
+                    <td width="20px">{{forloop.counter}}</td>
+                    <td width="50px">{{book.title}}</td>
+                    <td width="50px">{{book.author}}</td>
+                    <td width="20px"><a href="{% url 'update-book' book.pk %}">update</a></td>
+                    <td width="20px"><a href="{% url 'delete-book' book.pk %}">delete</a></td>
+                </tr>
+                {% endfor %}
+
+            </table>
+
+        </div>
+
+        {% else %}
+
+        <h1>Add books to show here.</h1>
+
+        {% endif %}
+
+
+
+    </center>
 </body>
 
 </html>
