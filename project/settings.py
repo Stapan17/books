@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-n$^6+uy#%!15++vfy#q*#0a61d^^a9(zrjq(r_1i4ntx$-q%bd
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://books-docker.herokuapp.com']
 
 # Application definition
 
