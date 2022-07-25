@@ -9,5 +9,5 @@ COPY . /code/
 
 RUN pip3 install -r requirements.txt
 
-CMD ["gunicorn", "--bind", ":", "--workers", "3", "project.wsgi:application"]
+CMD ["gunicorn", "--workers", "3", "project.wsgi:application"]
 
