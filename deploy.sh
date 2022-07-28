@@ -12,6 +12,6 @@ echo "ok2"
 echo "ok3"
 git pull heroku main
 echo "ok in"
-git push heroku dev:heroku/main
+git push heroku origin/dev:main
 echo "ok4"
 
