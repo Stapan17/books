@@ -17,7 +17,9 @@ pipeline {
 
         stage("Deploy") {
             steps {
-                echo "sh file of deploying will go here!!!"
+                sh "pwd"
+                sh "chmod +x deploy.sh"
+                sh "./deploy.sh"
             }
         }
 
