@@ -31,7 +31,7 @@ echo "5"
 git remote -v
 echo "6"
 
-git remote add heroku https://git.heroku.com/docker-books-container.git
+# git remote add heroku https://git.heroku.com/docker-books-container.git
 echo "7"
 
 git push heroku dev:main
