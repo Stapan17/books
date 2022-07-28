@@ -13,7 +13,7 @@
 # git remote show origin
 # echo "ok2"
 # echo "ok3"
-
+git status
 # echo "ok in"
 git push heroku dev:main
 # echo "ok4"
