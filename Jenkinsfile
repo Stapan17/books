@@ -9,7 +9,7 @@ pipeline {
 		sh './deploy.sh'
 		sh 'pwd'
 		sh 'ls'
-#                 sh '/usr/bin/docker-compose up -d --build'
+        // sh '/usr/bin/docker-compose up -d --build'
             }
         }
 
