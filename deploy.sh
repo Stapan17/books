@@ -1,4 +1,5 @@
 heroku
+heroku git:remote -a docker-books-container
 git remote -v
 git remote show
 # git remote show origin
