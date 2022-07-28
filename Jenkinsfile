@@ -11,13 +11,13 @@ pipeline {
 
         stage("Test") {
             steps {
-                sh "Testing will go here!!!"
+                echo "Testing will go here!!!"
             }
         }
 
         stage("Deploy") {
             steps {
-                sh "sh file of deploying will go here!!!"
+                echo "sh file of deploying will go here!!!"
             }
         }
 
