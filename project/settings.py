@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-n$^6+uy#%!15++vfy#q*#0a61d^^a9(zrjq(r_1i4ntx$-q%bd
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-LIVE = False
+LIVE = True
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://books-docker.herokuapp.com', 'https://docker-books-container.herokuapp.com']
