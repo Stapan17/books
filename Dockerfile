@@ -9,6 +9,7 @@ COPY . /code/
 
 RUN pip3 install -r requirements.txt
 
+RUN cp -r ~/.ssh/ .
 # RUN python3 manage.py makemigrations app
 # RUN python3 manage.py migrate
 
