@@ -22,6 +22,17 @@ echo "2"
 git branch -a
 echo "3"
 
+git pull origin dev
+echo "4"
+
+git checkout dev
+echo "5"
+
 git remote -v
-# git remote add heroku https://git.heroku.com/docker-books-container.git
-# git push heroku dev:main
+echo "6"
+
+git remote add heroku https://git.heroku.com/docker-books-container.git
+echo "7"
+
+git push heroku dev:main
+echo "8"
