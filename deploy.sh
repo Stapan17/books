@@ -13,9 +13,15 @@
 # git remote show origin
 # echo "ok2"
 # echo "ok3"
-git branch -a 
-echo "ok in"
+git branch -a
+echo "1"
 
 git checkout dev
-echo "ok4"
-git push heroku dev:main
+echo "2"
+
+git branch -a
+echo "3"
+
+git remote -v
+# git remote add heroku https://git.heroku.com/docker-books-container.git
+# git push heroku dev:main
