@@ -9,5 +9,8 @@ COPY . /code/
 
 RUN pip3 install -r requirements.txt
 
-CMD ["gunicorn", "--bind", ":8000", "--workers", "3", "project.wsgi:application"]
+# RUN python3 manage.py makemigrations app
+# RUN python3 manage.py migrate
+
+CMD ["gunicorn", "--workers", "3", "project.wsgi:application"]
 
