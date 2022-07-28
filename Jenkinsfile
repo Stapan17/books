@@ -11,7 +11,7 @@ pipeline {
 
         stage("Test") {
             steps {
-                sh "echo Testing will go here!!!"
+                echo "Testing will go here!!!"
             }
         }
 
