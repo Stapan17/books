@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
+import django_heroku
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,9 +28,10 @@ SECRET_KEY = 'django-insecure-n$^6+uy#%!15++vfy#q*#0a61d^^a9(zrjq(r_1i4ntx$-q%bd
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+LIVE = True
 
 ALLOWED_HOSTS = ['*']
-
+CSRF_TRUSTED_ORIGINS = ['https://books-docker.herokuapp.com', 'https://docker-books-container.herokuapp.com']
 
 # Application definition
 
@@ -50,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -76,18 +81,33 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-    #    'ENGINE': 'django.db.backends.sqlite3',
-    #    'NAME': BASE_DIR / 'db.sqlite3',
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'database',
-        'PORT': '5432',
+if LIVE:
+    DATABASES = {
+        'default': {
+        #    'ENGINE': 'django.db.backends.sqlite3',
+        #    'NAME': BASE_DIR / 'db.sqlite3',
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'd363qklnvh49kq',
+            'USER': 'gsqwhzzbjxwnlu',
+            'PASSWORD': '09f597b6868e68d7ad9a163b081964a00547457e94d36e2c1212b82c4481568a',
+            'HOST': 'ec2-3-213-228-206.compute-1.amazonaws.com',
+            'PORT': '5432',
+        }
     }
-}
+
+else:
+    DATABASES = {
+        'default': {
+        #    'ENGINE': 'django.db.backends.sqlite3',
+        #    'NAME': BASE_DIR / 'db.sqlite3',
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'postgres',
+            'USER': 'postgres',
+            'PASSWORD': 'postgres',
+            'HOST': 'database',
+            'PORT': '5432',
+        }
+    }
 
 
 # Password validation
@@ -134,3 +154,10 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+django_heroku.settings(locals())
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
