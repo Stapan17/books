@@ -13,7 +13,9 @@
 # git remote show origin
 # echo "ok2"
 # echo "ok3"
+git branch -a 
+echo "ok in"
+
 git checkout dev
-# echo "ok in"
+echo "ok4"
 git push heroku dev:main
-# echo "ok4"
