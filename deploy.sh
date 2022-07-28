@@ -8,8 +8,10 @@ git remote set-url origin 'https://Stapan17:git@github.com/Stapan17/books.git'
 
 git remote show origin
 echo "ok2"
-git remote show heroku
+# git remote show heroku
 echo "ok3"
+git pull heroku main
+echo "ok in"
 git push heroku dev:heroku/main
 echo "ok4"
 
