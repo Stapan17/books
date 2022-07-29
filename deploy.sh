@@ -3,7 +3,11 @@
 # git remote add heroku git@heroku.com:docker-books-container.git
 
 git checkout dev
-git pull origin dev
+echo "1"
+git pull
+echo "2"
 
 git status
+echo "3"
 git push heroku dev:main
+echo "4"
