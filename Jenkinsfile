@@ -6,7 +6,7 @@ pipeline {
         stage("Build") {
             steps {
 		sh 'chmod +x deploy.sh'
-		sh './deploy.sh'
+		sh 'sudo ./deploy.sh'
                 sh '/usr/bin/docker-compose up -d --build'
             }
         }
