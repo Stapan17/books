@@ -5,6 +5,7 @@
 git checkout dev
 echo "1"
 git pull
+git pull origin dev
 echo "2"
 
 git status
